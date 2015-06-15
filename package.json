@@ -1,0 +1,12 @@
+{
+  "name": "GWEB",
+  "version": "0.0.1",
+  "private": true,
+
+  "dependencies": {
+    "koa" : "^0.21.0",
+    "co-views" : "^1.0.0",
+    "koa-router" : "^5.1.2",
+    "dot" : "^1.0.3"
+  }
+}
