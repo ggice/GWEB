@@ -19,5 +19,5 @@ app.use(function *(next) {
 require("./config/routes")(app, router);
 
 if (!module.parent) app.listen(4000, function () {
-    console.log('sssc listening to http://localhost:4000');
+    console.log('\x1b[32m listening to http://localhost:4000');
 });
