@@ -1,3 +1,18 @@
+"use strict";
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
+
+var userSchema = new Schema({
+    name : String
+});
+
+var user = mongoose.model('user', userSchema);
+var addUser = new user({name : 'xiao ming'});
+
 module.exports = function *(next) {
-    this.body = yield this.render('index', {name: 'xiao ming'});
+    var users = yield user.find(function(err, users){
+        if(err) return console.err(err);
+        return users;
+    });
+    this.body = yield this.render('index', {name: users[0].name});
 };
