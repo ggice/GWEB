@@ -7,7 +7,6 @@ var userSchema = new Schema({
 });
 
 var user = mongoose.model('user', userSchema);
-var addUser = new user({name : 'xiao ming'});
 
 module.exports = function *(next) {
     var users = yield user.find(function(err, users){

@@ -19,7 +19,7 @@ mongoose.connection.on("error", function (err) {
 
 // setup views, appending .dot
 // when no extname is given to render()
-var render = views(__dirname + '/views', {ext: 'dot'});
+var render = views(__dirname + '/views', {ext: 'ejs'});
 app.use(function *(next) {
     this.render = render;
     yield next;
