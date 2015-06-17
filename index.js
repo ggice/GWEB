@@ -5,10 +5,14 @@ var views = require('co-views');
 var router = require('koa-router')();
 var koa = require('koa');
 var mongoose = require("mongoose");
+var statics = require('koa-static-folder');
 var app = module.exports = koa();
 
 //config
 var config = require('./config/config');
+
+//statics
+app.use(statics('./assets'));
 
 //connect to database
 var mongoUrl = config.mongo.host + ':' + config.mongo.port + '/' + config.mongo.database;
